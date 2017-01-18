@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.ayaan.starbucks.MainActivity"
+    android:background="#E0E0E0"
+    android:orientation="vertical">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/coffee"
+        android:scaleType="centerCrop"
+        android:id="@+id/first"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#C5E1A5">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seattle-based coffee house chain known for its signature roasts, light bites and WiFi availability"
+            android:paddingLeft="16dp"
+            android:paddingTop="16dp"
+            android:textSize="20sp"
+            android:id="@+id/intro"
+            android:textColor="#00C853"
+            android:textStyle="italic"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:textSize="16sp"
+            android:layout_below="@id/intro"
+            android:text="A1, Ground Floor, Hamilton House, Opposite Palikha Parking Exit Gate, Connaught Place, New Delhi, Delhi 110001"
+            android:id="@+id/address"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="011 6900 0263"
+            android:paddingLeft="16dp"
+            android:paddingTop="10dp"
+            android:layout_below="@id/address"
+            android:textSize="20sp"
+            android:id="@+id/phone"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtCredits"
+            android:linksClickable="true"
+            android:autoLink="web"
+            android:layout_centerHorizontal="true"
+            android:textSize="25dp"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/webs"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 8AM–1AM"
+            android:textSize="25dp"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/webs"
+            android:id="@+id/website"/>
+
+
+    </RelativeLayout>
+</LinearLayout>
