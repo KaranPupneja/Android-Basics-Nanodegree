@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     int scoreA = 0;
@@ -38,6 +39,37 @@ public class MainActivity extends AppCompatActivity {
     public void increase1b(View v){
         scoreB=scoreB +1;
         displayForTeamB(scoreB);
+    }
+    public void decrease1(View v){
+        scoreB=scoreB+1;
+        displayForTeamB(scoreB);
+    }
+    public void decrease1b(View v){
+        scoreA=scoreA+1;
+        displayForTeamA(scoreA);
+    }
+    public void reset(View v){
+        scoreA=0;
+        scoreB=0;
+        displayForTeamB(scoreB);
+        displayForTeamA(scoreA);
+    }
+    public void winning(View v)
+    {
+        if(scoreA>scoreB)
+        {
+            Toast.makeText(this,"Player 1 won by "+(scoreA-scoreB)+" points", Toast.LENGTH_SHORT).show();
+        }
+        else if (scoreB>scoreA)
+            Toast.makeText(this,"Player 2 won "+(scoreB-scoreA)+ " points", Toast.LENGTH_SHORT).show();
+        else if(scoreA==0 && scoreB==0)
+            Toast.makeText(this,"Match not started yet", Toast.LENGTH_SHORT).show();
+        else
+            Toast.makeText(this,"Match tied.\nFinal score of both the players are "+scoreA, Toast.LENGTH_SHORT).show();
+        scoreA=0;
+        scoreB=0;
+        displayForTeamB(scoreB);
+        displayForTeamA(scoreA);
     }
     public void displayForTeamA(int score) {
         TextView scoreView = (TextView) findViewById(R.id.team_a_score);
