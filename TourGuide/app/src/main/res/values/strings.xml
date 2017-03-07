@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">Mussoorie Tour Guide</string>
+    <string name="restaurant">Restaurants</string>
+    <string name="waterfall">Waterfalls</string>
+    <string name="attractions">Attractions</string>
+    <string name="hotels">Hotels</string>
+    <string name="kemptyfalldesc">Kempty Falls, situated at an altitude of 4,500 ft, is one of the popular tourist places of Mussoorie. It is a beautiful waterfall, which falls from a height of about 40 ft from a mountain.</string>
+    <string name="kemptyfalltitle">Kempty Fall</string>
+    <string name="bhattafalltitle">Bhatta Fall</string>
+    <string name="bhattafalldesc">Bhatta Falls is a recently developed picnic spot near Mussoorie. Located at about 7 km from main Mussoorie city, Bhatta Falls is still untouched by commercialization and has natural stream of water flowing down the hills.</string>
+    <string name="mossyfalltitle">Mossy Falls</string>
+    <string name="mossyfalldesc">Mossy fall, comparatively smaller but interesting fall, is a beautiful tourist spot surrounded by a dense forest that is easily approachable by following the road starting right from the Clock Tower in Landour.</string>
+    <string name="jharipanifallstitle">Jharipani Falls</string>
+    <string name="jharipanifallsdesc">The cascading Jharipani Falls is located on Mussoorie-Jharipani road about 9 km from Mussoorie.The enchanting Jharipani Falls offers a picturesque view of the Shivalik Range.</string>
+    <string name="camelsbacktitle">Camel\'s Back Road</string>
+    <string name="camelsbackdesc">Camel Back Road provides the same experience in Mussoorie. This 3 km long road is named as Camel Back Rd due to the presence of natural layout of rocks shaped like a camels hump at the end of road.</string>
+    <string name="companybaghtitle">Company Garden</string>
+    <string name="companybaghdesc">Company Garden is a colourful garden located at 3 km from The Mall. Also known as "Municipal Garden" or "Company Bagh". It has a variety of beautiful flowers and an amusement park also.</string>
+    <string name="georgeeveresttitle">George Everest</string>
+    <string name="georgeeverestdesc">George Everest House is situated about 6 kms from Gandhi Chowk in Mussoorie.It is situated in a place from where you can see panoramic view of the Doon Valley on one side and the snow clad Himalayan ranges on the other.</string>
+    <string name="laltibbatitle">Lal Tibba</string>
+    <string name="laltibbadesc">Lal Tibba is the highest peak\'s topmost point and  most famous place in Mussoorie. Popular among tourists and travellers for viewing long trails of major mountain peaks as well as romantic sunset and sunrise, Lal Tibba is located at Depot Hill in Landour.</string>
+    <string name="buddhatempletitle">Buddha Temple</string>
+    <string name="buddhatempledesc">At a distance of 2.5 km from Library Bus Stand, Happy Valley is a large Tibetan settlement in Mussoorie. It is also famous for housing IAS Academy, Tibetan temples and the Municipal Gardens. Happy Valley starts from the west side of Library Point and leads to the Cloud\'s End.</string>
+    <string name="claridgestitle">The Claridges Nabha Residence</string>
+    <string name="claridgesdesc">The Claridges Nabha Residence, situated in the picturesque hill station of Mussoorie is surrounded by majestic hills. It’s a perfect retreat for those who wish to escape the cacophony of city life.</string>
+    <string name="fortunethesavoytitle">Fortune The Savoy</string>
+    <string name="fortunethesavoydesc"> Fortune The Savoy is an elegant and historic hotel with a regal history of more than a hundred years. This first class upscale hotel in Mussoorie is conveniently located at the Library End of the Mall Road.</string>
+    <string name="jaypeetitle">Jaypee Residency Manor</string>
+    <string name="jaypeedesc">Spread over 9 acres of lush green area, on a hilltop, this unique five star deluxe hotel is your own paradise. The hotel is a tribute to the majesty - splendor of Mussoorie "the queen of hills".</string>
+    <string name="jwmarriotttitle">JW Marriott Mussoorie Walnut Grove Resort and Spa</string>
+    <string name="jwmarriottdesc">Situated in the breathtaking hill station of Mussoorie, the hotel offers unbeatable access to the staggering natural beauty of the Himalayas. Stretch out in the five-star hotel rooms </string>
+    <string name="kalsangtitle">Kalsang Friends Corner</string>
+    <string name="kalsangdesc">Kalsang is definitely one of the better Chinese restaurants in Mussoorie but it’s not just because of how good or elaborate their menu is, but because it’s all reasonably priced and worth every penny.</string>
+    <string name="chickchocolatetitle">Chic Chocolate</string>
+    <string name="chickchocolatedesc">It’s a gorgeous restaurant cum cafe with a whole lot of wrought iron furniture, coloured tiles and food boards.They\'ve got a whole section of home-made chocolates that are available to taste and to sell.</string>
+    <string name="lovelyomelettetitle">Lovely Omelette Centre</string>
+    <string name="lovelyomelettedesc">Don’t go by the petite size of this eatery, because what it offers could probably be one of the most cherished treats you would ever eat in a hill station. Always thronged by tourists and locals alike, where they wait patiently for their plate of omelette, you can’t miss this spot.</string>
+    <string name="littlelamacafetitle">Little Llama Cafe</string>
+    <string name="littlelamacafedesc">If you’re looking for a quintessential hill station cafe then this place is for you. Its cosy atmosphere along with its assortment of quick bites and continental food options, it becomes a gastronomic paradise. </string>
+    <string name="taverntitle">Tavern</string>
+    <string name="taverndesc">Reminiscent of English pubs, it is tastefully done up and evokes a laid-back atmosphere. You can cosy up with your choice of poison, nibble on bar treats, and let time go by.</string>
+
+
+
+
+</resources>
