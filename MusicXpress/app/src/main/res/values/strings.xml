@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MusicXpress</string>
+    <string name="main">MediaPlayer-This class is the primary API for playing sound and video.\nAudioManager-This class manages audio sources and audio output on a device.</string>
 </resources>
