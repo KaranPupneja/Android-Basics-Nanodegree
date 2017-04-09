@@ -95,11 +95,21 @@ public final class BookJson{
                 JSONObject itemarray = items.optJSONObject(i);
                 JSONObject volume = itemarray.optJSONObject("volumeInfo");
                 String title = volume.optString("title");
-//                JSONArray authorarray = volume.getJSONArray("authors");
-//                String authors = authorarray.getString(0);
-                String authors = volume.optString("authors");
-                String url = itemarray.getString("webReaderLink");
-                Book books = new Book(title,authors,url);
+                JSONArray authorarray = volume.getJSONArray("authors");
+                String authors ="";
+                int l=authorarray.length();
+                for(int j=0;j<l;j++) {
+                    String a = authorarray.getString(j);
+                    authors +=a;
+                    if(j<l-1){
+                    authors+=", ";}
+                }              // String authors = volume.optString("authors");
+//                int l;
+//                l= authors.length();
+//                authors.substring(2,l-1);
+//                l=0;
+                //String url = itemarray.getString("webReaderLink");
+                Book books = new Book(title,authors,"URL");
                 book.add(books);
                 Log.e(title,authors);
             }
