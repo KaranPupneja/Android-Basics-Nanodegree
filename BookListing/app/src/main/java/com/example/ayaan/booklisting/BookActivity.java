@@ -1,7 +1,10 @@
 package com.example.ayaan.booklisting;
 
 import android.app.LoaderManager;
+import android.content.Context;
 import android.content.Loader;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,12 +13,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.R.attr.data;
 
 public class BookActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<Book>> {
     //private String enteredtext;
@@ -25,6 +31,7 @@ public class BookActivity extends AppCompatActivity implements LoaderManager.Loa
     public String book_url;
     public BookAdapter booklist;
     private ProgressBar progressBar;
+    private ListView listView;
 
 
     @Override
@@ -35,6 +42,21 @@ public class BookActivity extends AppCompatActivity implements LoaderManager.Loa
         search = (Button)findViewById(R.id.search);
         text = enteredtext.getText().toString();
         progressBar = (ProgressBar)findViewById(R.id.progress);
+        final TextView textView = (TextView)findViewById(R.id.internet);
+        ConnectivityManager cm = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        final NetworkInfo networkInfo = cm.getActiveNetworkInfo();
+        final LoaderManager loaderManager = getLoaderManager();
+
+        if(networkInfo!= null && networkInfo.isConnected()){
+                    //Log.e("")
+                    loaderManager.initLoader(1,null,BookActivity.this);
+                    //loaderManager.restartLoader(0,null,BookActivity.this);
+                    Log.e("Netwok","Connected");
+            textView.setVisibility(View.GONE);}
+
+        else {
+            textView.setVisibility(View.VISIBLE);
+        }
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,19 +64,20 @@ public class BookActivity extends AppCompatActivity implements LoaderManager.Loa
 //                    enteredtext.setError("Empty");
 //                }
 //                else {
+
                 progressBar.setVisibility(View.VISIBLE);
                 String urltosearch =enteredtext.getText().toString().trim();
+
                     book_url = "https://www.googleapis.com/books/v1/volumes?q="+urltosearch;
-                    LoaderManager loaderManager = getLoaderManager();
-                //Log.e("")
-                    loaderManager.initLoader(1,null,BookActivity.this);
-                    //loaderManager.restartLoader(0,null,BookActivity.this);
-                    Log.e("Netwok","Connected");
+                if(networkInfo!=null && networkInfo.isConnected()){textView.setVisibility(View.GONE);}
+                Log.v("url:", book_url);
+                loaderManager.restartLoader(1,null, BookActivity.this);
 
             }
         });
         ListView books = (ListView)findViewById(R.id.list);
         booklist = new BookAdapter(this,new ArrayList<Book>());
+
         books.setAdapter(booklist);
     }
 
@@ -62,14 +85,29 @@ public class BookActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     public Loader<List<Book>> onCreateLoader(int id, Bundle args) {
+        Log.v("here:", "hi");
+//        textView.setVisibility(View.GONE);
+        if(booklist!=null)
+        {
+            booklist.clear();
+        }
         return new BookLoader(this,book_url);
     }
 
     @Override
     public void onLoadFinished(Loader<List<Book>> loader, List<Book> data) {
         progressBar.setVisibility(View.GONE);
+        TextView textView = (TextView)findViewById(R.id.empty);
         booklist.clear();
-        booklist.addAll(data);
+        if (booklist!= null && data!= null){
+
+            booklist.addAll(data);
+            textView.setVisibility(View.GONE);
+        }
+        if (booklist==null){
+
+            textView.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
