@@ -32,8 +32,8 @@ public class BookActivity extends AppCompatActivity implements LoaderManager.Loa
     public BookAdapter booklist;
     private ProgressBar progressBar;
     private ListView listView;
-
-
+    private TextView empty;
+     TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,11 +42,12 @@ public class BookActivity extends AppCompatActivity implements LoaderManager.Loa
         search = (Button)findViewById(R.id.search);
         text = enteredtext.getText().toString();
         progressBar = (ProgressBar)findViewById(R.id.progress);
-        final TextView textView = (TextView)findViewById(R.id.internet);
+       textView = (TextView)findViewById(R.id.internet);
         ConnectivityManager cm = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
         final NetworkInfo networkInfo = cm.getActiveNetworkInfo();
         final LoaderManager loaderManager = getLoaderManager();
-
+        empty = (TextView)findViewById(R.id.empty);
+        empty.setVisibility(View.GONE);
         if(networkInfo!= null && networkInfo.isConnected()){
                     //Log.e("")
                     loaderManager.initLoader(1,null,BookActivity.this);
@@ -77,8 +78,8 @@ public class BookActivity extends AppCompatActivity implements LoaderManager.Loa
         });
         ListView books = (ListView)findViewById(R.id.list);
         booklist = new BookAdapter(this,new ArrayList<Book>());
-
         books.setAdapter(booklist);
+
     }
 
 
@@ -90,19 +91,23 @@ public class BookActivity extends AppCompatActivity implements LoaderManager.Loa
         if(booklist!=null)
         {
             booklist.clear();
+
         }
+
         return new BookLoader(this,book_url);
     }
 
     @Override
     public void onLoadFinished(Loader<List<Book>> loader, List<Book> data) {
         progressBar.setVisibility(View.GONE);
-        TextView textView = (TextView)findViewById(R.id.empty);
         booklist.clear();
         if (booklist!= null && data!= null){
-
             booklist.addAll(data);
             textView.setVisibility(View.GONE);
+            if(booklist.isEmpty()){
+                empty.setVisibility(View.VISIBLE);
+
+            }
         }
         if (booklist==null){
 

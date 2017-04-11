@@ -34,7 +34,6 @@ public class BookAdapter extends ArrayAdapter<Book> {
         name.setText(current.getBookname());
         TextView author = (TextView)currentlist.findViewById(R.id.author);
         author.setText(current.getAuthor());
-
         return currentlist;
     }
 }
