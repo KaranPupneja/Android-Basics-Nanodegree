@@ -4,7 +4,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import com.example.ayaan.inventoryapp.data.StorageContract.StorageEntry;
-import static android.R.attr.version;
 
 /**
  * Created by AYAAN on 5/4/2017.
@@ -26,7 +25,8 @@ public class StorageDbHelper extends SQLiteOpenHelper{
                 +StorageEntry.COLUMN_PRODUCT_NAME + " TEXT NOT NULL,"
                 +StorageEntry.COLUMN_PRODUCT_QUANTITY + " INT NOT NULL,"
                 +StorageEntry.COLUMN_PRODUCT_IMAGE + " TEXT, "
-                +StorageEntry.COLUMN_PRODUCT_PRICE + " INTEGER NOT NULL DEFAULT 0);";
+                +StorageEntry.COLUMN_PRODUCT_PRICE + " INTEGER NOT NULL DEFAULT 0,"
+                +StorageEntry.COLUMN_PHONE_NUMBER + " INTEGER NOT NULL);";
         sqLiteDatabase.execSQL(CREATE_TABLE);
     }
 
